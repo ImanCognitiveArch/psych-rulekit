@@ -1,0 +1,74 @@
+{
+  "name": "psych-rulekit",
+  "version": "0.1.0",
+  "description": "A provenance-aware, deterministic rules engine for transparent mental-health research software.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./cas": {
+      "types": "./dist/cas.d.ts",
+      "import": "./dist/cas.js"
+    },
+    "./app": {
+      "types": "./dist/app-adapter.d.ts",
+      "import": "./dist/app-adapter.js"
+    },
+    "./schema/rule-pack.json": "./schema/rule-pack.schema.json",
+    "./data/cas-process-v1.json": "./data/cas-process-v1.json",
+    "./data/research-registry.json": "./data/research-registry.json"
+  },
+  "files": [
+    "dist",
+    "schema",
+    "data",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "DISCLAIMER.md"
+  ],
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build": "npm run clean && tsc -p tsconfig.json",
+    "prepare": "npm run build",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && tsc -p tsconfig.tests.json && node --test dist-tests/tests/*.test.js",
+    "validate:data": "npm run build && node scripts/validate-data.mjs",
+    "verify": "npm run typecheck && npm test && npm run validate:data && npm pack --dry-run"
+  },
+  "keywords": [
+    "clinical-research",
+    "decision-rules",
+    "mental-health",
+    "metacognitive-therapy",
+    "rule-engine",
+    "typescript"
+  ],
+  "author": "Iman Khorami",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImanCognitiveArch/psych-rulekit.git"
+  },
+  "homepage": "https://github.com/ImanCognitiveArch/psych-rulekit#readme",
+  "bugs": {
+    "url": "https://github.com/ImanCognitiveArch/psych-rulekit/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "typescript": "^5.9.2"
+  }
+}

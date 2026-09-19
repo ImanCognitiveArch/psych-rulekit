@@ -1,0 +1,8 @@
+src/
+tests/
+examples/
+docs/
+scripts/
+.github/
+AGENTS.md
+tsconfig*.json

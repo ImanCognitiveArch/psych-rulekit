@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "research.example_pack",
+  "title": "Example research rule pack",
+  "version": "0.1.0",
+  "description": "Replace this synthetic example only after completing rights and review checks.",
+  "intendedUse": "research",
+  "locale": "en",
+  "jurisdiction": "research-only",
+  "facts": [
+    {
+      "id": "example_feature_present",
+      "label": "Example feature is present",
+      "valueType": "boolean"
+    },
+    {
+      "id": "example_duration_days",
+      "label": "Example duration in days",
+      "valueType": "number",
+      "unit": "day"
+    },
+    {
+      "id": "example_exclusion_present",
+      "label": "Example exclusion is present",
+      "valueType": "boolean"
+    }
+  ],
+  "inclusion": {
+    "kind": "all",
+    "id": "inclusion.root",
+    "rules": [
+      {
+        "kind": "fact",
+        "id": "inclusion.feature",
+        "factId": "example_feature_present"
+      },
+      {
+        "kind": "compare",
+        "id": "inclusion.duration",
+        "factId": "example_duration_days",
+        "operator": "gte",
+        "value": 1
+      }
+    ]
+  },
+  "exclusion": {
+    "kind": "fact",
+    "id": "exclusion.example",
+    "factId": "example_exclusion_present"
+  },
+  "evidence": [
+    {
+      "id": "replace-me",
+      "citation": "Replace with an authoritative, precisely located source.",
+      "permissionStatus": "unknown"
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "notes": "Not clinically reviewed or validated."
+  },
+  "license": "UNLICENSED"
+}

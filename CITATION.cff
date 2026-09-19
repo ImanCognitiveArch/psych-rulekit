@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use PsychRuleKit in research, please cite the archived release."
+title: "PsychRuleKit: A provenance-aware deterministic rules engine for mental-health research"
+type: software
+authors:
+  - family-names: Khorami
+    given-names: Iman
+version: 0.1.0
+date-released: 2026-09-19
+license: MIT
+repository-code: "https://github.com/ImanCognitiveArch/psych-rulekit"
+keywords:
+  - mental health research
+  - deterministic rule engine
+  - metacognitive therapy
+  - explainable evaluation

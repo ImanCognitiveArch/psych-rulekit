@@ -1,0 +1,35 @@
+name: Rule-pack proposal
+description: Propose a new or revised research rule pack.
+title: "[Rule pack]: "
+labels: ["rule-pack", "needs-review"]
+body:
+  - type: input
+    id: purpose
+    attributes:
+      label: Intended research purpose
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Authoritative sources and permissions
+      description: Include edition, page/section identifiers, license or permission status, and jurisdiction.
+    validations:
+      required: true
+  - type: textarea
+    id: review
+    attributes:
+      label: Clinical and methodological reviewers
+    validations:
+      required: true
+  - type: checkboxes
+    id: safeguards
+    attributes:
+      label: Safeguards
+      options:
+        - label: No copyrighted criteria text is included without documented permission.
+          required: true
+        - label: The proposal reports rule matching, not diagnosis.
+          required: true
+        - label: Unknown and missing information paths have tests.
+          required: true

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "mct.cas.process-map",
+  "title": "Cognitive Attentional Syndrome process map",
+  "purpose": "A non-diagnostic structure for mapping maintaining processes in metacognitive formulation.",
+  "nodes": [
+    { "id": "trigger", "label": "Trigger", "kind": "input" },
+    { "id": "positive_metacognitive_beliefs", "label": "Positive metacognitive beliefs", "kind": "belief" },
+    { "id": "negative_metacognitive_beliefs", "label": "Negative metacognitive beliefs", "kind": "belief" },
+    { "id": "extended_thinking", "label": "Extended thinking: worry and rumination", "kind": "strategy" },
+    { "id": "threat_monitoring", "label": "Threat monitoring", "kind": "strategy" },
+    { "id": "coping_responses", "label": "Coping responses", "kind": "strategy" },
+    { "id": "consequences", "label": "Emotional, cognitive, behavioral, and interpersonal consequences", "kind": "outcome" }
+  ],
+  "edges": [
+    { "from": "trigger", "to": "positive_metacognitive_beliefs", "relation": "activates" },
+    { "from": "trigger", "to": "negative_metacognitive_beliefs", "relation": "activates" },
+    { "from": "positive_metacognitive_beliefs", "to": "extended_thinking", "relation": "selects" },
+    { "from": "negative_metacognitive_beliefs", "to": "threat_monitoring", "relation": "amplifies" },
+    { "from": "extended_thinking", "to": "consequences", "relation": "maintains" },
+    { "from": "threat_monitoring", "to": "consequences", "relation": "maintains" },
+    { "from": "coping_responses", "to": "consequences", "relation": "maintains" },
+    { "from": "consequences", "to": "negative_metacognitive_beliefs", "relation": "reinforces" }
+  ],
+  "requiredPrompts": [
+    "What triggered the episode: thought, image, memory, sensation, situation, or emotion?",
+    "What made worry, rumination, monitoring, or control seem useful?",
+    "What was believed to be dangerous or uncontrollable about the mental event?",
+    "How was attention allocated?",
+    "What coping responses were used, and what happened immediately and later?",
+    "What evidence is direct, inferred, reported, or still unknown?"
+  ],
+  "safety": {
+    "diagnostic": false,
+    "treatmentDirective": false,
+    "humanInterpretationRequired": true
+  },
+  "reference": {
+    "citation": "Wells, A. (2009). Metacognitive Therapy for Anxiety and Depression. Guilford Press.",
+    "permissionStatus": "citation_only"
+  }
+}
