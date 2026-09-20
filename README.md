@@ -1,5 +1,8 @@
 # PsychRuleKit
 
+[![npm version](https://img.shields.io/npm/v/psych-rulekit.svg)](https://www.npmjs.com/package/psych-rulekit)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22864323.svg)](https://doi.org/10.5281/zenodo.22864323)
+
 **A provenance-aware, deterministic rules engine for transparent mental-health research software.**
 
 PsychRuleKit separates *how rules are evaluated* from *who authored the rules,
@@ -160,7 +163,11 @@ criteria without documented permission will not be accepted.
 
 ## Citation
 
-Use `CITATION.cff` or the DOI created for the corresponding archived release.
+Khorami, I. (2026). *PsychRuleKit: A provenance-aware deterministic rules engine
+for mental-health research* (Version v0.1.0) [Computer software]. Zenodo.
+[https://doi.org/10.5281/zenodo.22864323](https://doi.org/10.5281/zenodo.22864323)
+
+Machine-readable metadata is available in `CITATION.cff`.
 
 ## License
 
