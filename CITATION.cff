@@ -6,7 +6,8 @@ authors:
   - family-names: Khorami
     given-names: Iman
 version: 0.1.0
-date-released: 2026-09-19
+date-released: 2026-09-20
+doi: 10.5281/zenodo.22864323
 license: MIT
 repository-code: "https://github.com/ImanCognitiveArch/psych-rulekit"
 keywords:
