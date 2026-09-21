@@ -1,22 +1,41 @@
 {
   "name": "psych-rulekit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A provenance-aware, deterministic rules engine for transparent mental-health research software.",
   "type": "module",
-  "main": "./dist/index.js",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
     },
     "./cas": {
-      "types": "./dist/cas.d.ts",
-      "import": "./dist/cas.js"
+      "import": {
+        "types": "./dist/cas.d.ts",
+        "default": "./dist/cas.js"
+      },
+      "require": {
+        "types": "./dist/cjs/cas.d.ts",
+        "default": "./dist/cjs/cas.js"
+      }
     },
     "./app": {
-      "types": "./dist/app-adapter.d.ts",
-      "import": "./dist/app-adapter.js"
+      "import": {
+        "types": "./dist/app-adapter.d.ts",
+        "default": "./dist/app-adapter.js"
+      },
+      "require": {
+        "types": "./dist/cjs/app-adapter.d.ts",
+        "default": "./dist/cjs/app-adapter.js"
+      }
     },
     "./schema/rule-pack.json": "./schema/rule-pack.schema.json",
     "./data/cas-process-v1.json": "./data/cas-process-v1.json",
@@ -33,10 +52,13 @@
   ],
   "scripts": {
     "clean": "node scripts/clean.mjs",
-    "build": "npm run clean && tsc -p tsconfig.json",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p tsconfig.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json && node scripts/write-cjs-package.mjs",
     "prepare": "npm run build",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "npm run build && tsc -p tsconfig.tests.json && node --test dist-tests/tests/*.test.js",
+    "test": "npm run build && tsc -p tsconfig.tests.json && node --test dist-tests/tests/*.test.js && npm run test:entrypoints",
+    "test:entrypoints": "node scripts/verify-entrypoints.mjs",
     "validate:data": "npm run build && node scripts/validate-data.mjs",
     "verify": "npm run typecheck && npm test && npm run validate:data && npm pack --dry-run"
   },

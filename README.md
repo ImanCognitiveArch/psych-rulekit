@@ -1,7 +1,7 @@
 # PsychRuleKit
 
 [![npm version](https://img.shields.io/npm/v/psych-rulekit.svg)](https://www.npmjs.com/package/psych-rulekit)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22864323.svg)](https://doi.org/10.5281/zenodo.22864323)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22864321.svg)](https://doi.org/10.5281/zenodo.22864321)
 
 **A provenance-aware, deterministic rules engine for transparent mental-health research software.**
 
@@ -98,6 +98,16 @@ const evaluation = evaluateRulePack(rulePack, assessment);
 const appRecord = toAppEvaluationRecord(evaluation);
 ```
 
+Both module systems are supported:
+
+```js
+// ESM
+import { evaluateRulePack } from "psych-rulekit";
+
+// CommonJS
+const { evaluateRulePack } = require("psych-rulekit");
+```
+
 See [`examples/synthetic-stress-loop.ts`](examples/synthetic-stress-loop.ts)
 for a runnable, deliberately non-diagnostic example.
 
@@ -164,8 +174,8 @@ criteria without documented permission will not be accepted.
 ## Citation
 
 Khorami, I. (2026). *PsychRuleKit: A provenance-aware deterministic rules engine
-for mental-health research* (Version v0.1.0) [Computer software]. Zenodo.
-[https://doi.org/10.5281/zenodo.22864323](https://doi.org/10.5281/zenodo.22864323)
+for mental-health research* [Computer software]. Zenodo.
+[https://doi.org/10.5281/zenodo.22864321](https://doi.org/10.5281/zenodo.22864321)
 
 Machine-readable metadata is available in `CITATION.cff`.
 
